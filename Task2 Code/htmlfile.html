@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><b>Todo List Of A Day</b></title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1>Todo App</h1>
+      <input type="text" v-model="newTodo" @keyup.enter="addTodo" placeholder="Add a new task">
+      <ul class="todo-list">
+        <li v-for="(todo, index) in todos" :key="index" class="todo-container">
+          <div class="todo-text">
+            <input type="checkbox" v-model="todo.completed"> {{ todo.text }}
+          </div>
+          <button class="delete-button" @click="deleteTodo(index)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0/dist/vue.global.prod.min.js"></script>
+  <script src="vu3.js"></script>
+  <link rel="stylesheet" type="text/css" href="task2.css" />
+  </link>
+
+</html>
